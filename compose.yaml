@@ -1,0 +1,13 @@
+services:
+  app:
+    image: dht_script
+    build: .
+    #devices:
+    #  - /dev/gpiomem:/dev/gpiomem
+    privileged: true
+    volumes:
+      - ./config.yml:/config.yml:ro
+      - ./proc-cpuinfo:/proc/cpuinfo:ro
+    environment:
+      - BLINKA_FORCECHIP=changeme
+      - BLINKA_FORCEBOARD=changeme

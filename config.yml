@@ -1,0 +1,10 @@
+mqtt_host: "changeme"
+mqtt_port: 1883
+mqtt_tls: false
+mqtt_temp_topic: "rasp/temperature"
+mqtt_hum_topic: "rasp/humidity"
+mqtt_user: "changeme"
+mqtt_password: "changeme"
+read_period: 15 #seconds
+max_reporting_period: 300 #seconds. Force mqtt sending, even if the values have not changed.
+debug: false
