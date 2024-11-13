@@ -1,7 +1,9 @@
 
-Trying to access raspberry GPIO from a docker container.
+# Trying to access raspberry GPIO from a docker container.
 
 Simple python script which reads temperature and humidity sensors and send it to a MQTT broker.
+- DHT sensor on D4
+- build with `sudo docker compose build`
 
 For the container, challenge are:
 - access to the GPIO
