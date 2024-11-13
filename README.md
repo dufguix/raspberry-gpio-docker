@@ -28,6 +28,7 @@ print("Board id: ", detector.board.id) # Board id:  RASPBERRY_PI_3A_PLUS
 ```
 
 [Source code](https://github.com/adafruit/Adafruit_Python_PlatformDetect/blob/main/adafruit_platformdetect/chip.py)
+
 It tries to read env vars before analyzing config files.
 So simply add this to the compose file:
 ```yaml
@@ -44,6 +45,7 @@ print(GPIO.RPI_INFO)
 ```
 
 [Source code](https://sourceforge.net/p/raspberry-gpio-python/code/ci/default/tree/source/cpuinfo.c#l52)
+
 It reads the following config files:
 - /proc/device-tree/system/linux,revision
 - /proc/cpuinfo
@@ -52,9 +54,9 @@ Focus on `/proc/cpuinfo` only.
 The lib tries to find a line beginning with `Hardware        : BCMxxxx`.
 On my raspbian installation, the line doesn't exist. So I copy-paste and edit the file.
 ```
-cp /proc/cpuinfo proc-cpuinfo #copy paste
-chmod 644 proc-cpuinfo #change permission for writing
-nano proc-cpuinfo #edit the file and add , for example, `Hardware        : BCM2837`
+cp /proc/cpuinfo proc-cpuinfo  #copy paste
+chmod 644 proc-cpuinfo         #change permission for writing
+nano proc-cpuinfo              #edit the file and add , for example, `Hardware        : BCM2837`
 ```
 Then bind the file to the container. So in compose file:
 ```yaml
